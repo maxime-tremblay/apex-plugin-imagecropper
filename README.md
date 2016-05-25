@@ -1,9 +1,11 @@
-# Oracle APEX Dynamic Action Plugin - Apex Image Cropper <a name="top"></a>
+<a name="top"></a>
+# Oracle APEX Dynamic Action Plugin - Apex Image Cropper
 This dynamic action plugin is used to crop an image using an HTML5 canvas and saves the resulting cropped image into the database.
 
 This plugin is based on the Cropper jQuery plugin ([https://github.com/fengyuanchen/cropper](https://github.com/fengyuanchen/cropper)).
 
-## Table of contents <a name="table-of-contents"></a>
+<a name="table-of-contents"></a>
+## Table of contents
 
   - [Changelog](#changelog)
   - [Install](#install)
@@ -12,18 +14,21 @@ This plugin is based on the Cropper jQuery plugin ([https://github.com/fengyuanc
   - [Demo Application](#demo)
   - [Preview](#preview)
 
-## Changelog <a name="changelog"></a>
+<a name="changelog"></a>
+## Changelog
 ### 1.0 - Initial Release
 
 [⬆ back to top](#top)
 
-## Install <a name="install"></a>
+<a name="install"></a>
+## Install
 - Import plugin file "dynamic_action_plugin_ca_maximet_apexcropper.sql" from source directory into your application
 - (Optional) Deploy the JS and CSS files from "server" directory on your webserver and change the "File Prefix" to webservers folder.
 
 [⬆ back to top](#top)
 
-## Plugin Settings <a name="plugin-settings"></a>
+<a name="plugin-settings"></a>
+## Plugin Settings
 ### Application Attribute
 None
 
@@ -153,8 +158,8 @@ The height of the cropped image. Only used when saving the image.
 
 Show a spinner while running the PLSQL Code to save the cropped image.
 
-
-## How to use <a name="how-to-use"></a>
+<a name="how-to-use"></a>
+## How to use
 
 ### Save Cropped Image to DB
 For saving the cropped image to DB you can use a PL/SQL function like this (default):
@@ -300,10 +305,12 @@ end;
     - Type: `Request = Value`
     - Value: `SAVE`
 
-## Demo Application <a name="demo"></a>
+<a name="demo"></a>
+## Demo Application
 [http://max-playground.no-ip.org/ords/f?p=DEMO:1100](http://max-playground.no-ip.org/ords/f?p=DEMO:1100)
 
-## Preview <a name="preview"></a>
+<a name="preview"></a>
+## Preview
 ## ![](https://github.com/maxime-tremblay/apex-plugin-imagecropper/blob/master/preview.gif)
 
 [⬆ back to top](#top)
