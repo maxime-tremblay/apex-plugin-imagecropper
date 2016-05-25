@@ -235,10 +235,10 @@ Here's how you can reproduce the demo application
  - Based On: `BLOB Column returned by SQL statement`
  - SQL Statement:
    ```language-sql
-   select blob_content
-    from apex_application_temp_files
-   where name = :P2_UPLOAD
-   ```
+select blob_content
+  from apex_application_temp_files
+ where name = :P2_UPLOAD
+```
    
  - Display Condition :
     - Type: `Item is NOT NULL`
@@ -280,15 +280,15 @@ Here's how you can reproduce the demo application
   - PL/SQL Code:
   ```language-sql
 declare
-   l_blob blob;
+  l_blob blob;
 begin
-   insert into mp_cropper_file_upload(blob_content, file_name, mime_type, doc_size)
-   select blob001 AS img_content,
-          c001 AS filename,
-          c002 AS mime_type,
-          dbms_lob.getlength(blob001) doc_size
-     from apex_collections
-    where collection_name = 'APEX_IMAGE_CROPPER';
+  insert into mp_cropper_file_upload(blob_content, file_name, mime_type, doc_size)
+  select blob001 AS img_content,
+         c001 AS filename,
+         c002 AS mime_type,
+         dbms_lob.getlength(blob001) doc_size
+    from apex_collections
+   where collection_name = 'APEX_IMAGE_CROPPER';
 end;
 ```
   - Condition
