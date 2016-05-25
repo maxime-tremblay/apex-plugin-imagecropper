@@ -249,7 +249,6 @@ select blob_content
   from apex_application_temp_files
  where name = :P2_UPLOAD
 ```
-   
  - Display Condition :
     - Type: `Item is NOT NULL`
     - Item: P2_UPLOAD
