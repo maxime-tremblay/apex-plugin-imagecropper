@@ -160,50 +160,55 @@ Show a spinner while running the PLSQL Code to save the cropped image.
 For saving the cropped image to DB you can use a PL/SQL function like this (default):
 ```language-sql
 declare
-    l_collection_name varchar2(100) := 'APEX_IMAGE_CROPPER';
-    l_chunk           varchar2(32000);
-    l_clob            clob;
-    l_blob            blob;
-    l_blob_size       number;
-    l_filename        varchar2(100) := 'image_cropper_' || to_char(sysdate, 'YYYYMMDDHH24MISS') || '.png';
-    l_mime_type       varchar2(100) := 'image/png';
+  l_collection_name varchar2(100);
+  l_chunk       varchar2(32000);
+  l_clob      clob;
+  l_blob      blob;
+  l_blob_size     number;
+  l_filename    varchar2(100);
+  l_mime_type     varchar2(100);
 begin
-    -- build CLOB from f01 30k Array
-    dbms_lob.createtemporary(l_clob,
-                             false,
-                             dbms_lob.session);
-
-    for i in 1 .. apex_application.g_f01.count
-    loop
-        l_chunk := wwv_flow.g_f01(i);
-
-        if length(l_chunk) > 0 then
-            dbms_lob.writeappend(l_clob,
-                                 length(l_chunk),
-                                 l_chunk);
-        end if;
-    end loop;
-
-    -- convert base64 CLOB to BLOB (mimetype: image/png)
-    l_blob := apex_web_service.clobbase642blob(p_clob => l_clob);
-    l_blob_size := dbms_lob.getlength(lob_loc => l_blob);
-
-    --
-    -- here starts custom part (for example a Insert statement)
-    --
-
-    -- create or truncate the collection
-    apex_collection.create_or_truncate_collection(l_collection_name);
-
-    -- add collection member (only if BLOB not null)
-    if l_blob_size is not null then
-        apex_collection.add_member(p_collection_name => l_collection_name,
-                                   p_c001            => l_filename, -- filename
-                                   p_c002            => l_mime_type, -- mime_type
-                                   p_n001            => l_blob_size, -- blob size
-                                   p_d001            => sysdate, -- date created
-                                   p_blob001         => l_blob); -- BLOB img content
+  -- get defaults
+  l_filename  := 'image_cropper_' || to_char(SYSDATE, 'YYYYMMDDHH24MISS') || '.png';
+  l_mime_type := 'image/png';
+  
+  -- build CLOB from f01 30k Array
+  dbms_lob.createtemporary(l_clob,
+               false,
+               dbms_lob.session);
+  
+  for i in 1 .. apex_application.g_f01.count
+  loop
+    l_chunk := wwv_flow.g_f01(i);
+    
+    if length(l_chunk) > 0 then
+      dbms_lob.writeappend(l_clob,
+                 length(l_chunk),
+                 l_chunk);
     end if;
+  end loop;
+  
+  -- convert base64 CLOB to BLOB (mimetype: image/png)
+  l_blob := apex_web_service.clobbase642blob(p_clob => l_clob);
+  l_blob_size := dbms_lob.getlength(lob_loc => l_blob);
+  
+  --
+  -- here starts custom part (for example a Insert statement)
+  --
+  l_collection_name := 'APEX_IMAGE_CROPPER';
+  
+  -- create or truncate the collection
+  apex_collection.create_or_truncate_collection(l_collection_name);
+  
+  -- add collection member (only if BLOB not null)
+  if l_blob_size is not null then
+    apex_collection.add_member(p_collection_name => l_collection_name,
+                   p_c001      => l_filename, -- filename
+                   p_c002      => l_mime_type, -- mime_type
+                   p_n001      => l_blob_size, -- blob size
+                   p_d001      => sysdate, -- date created
+                   p_blob001     => l_blob); -- BLOB img content
+  end if;
 end;
 ```
 
