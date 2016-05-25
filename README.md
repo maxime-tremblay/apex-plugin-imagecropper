@@ -127,12 +127,12 @@ The minimum height of the crop box.
 - Type: `PLSQL Code`
 - Default: `PL/SQL code that saves the cropped image as blob`
 
+See [Save Cropped Image to DB](#how-to-use)
+
 
 #### Save Button jQuery Selector
 - Type: `String` (**jQuery selector**)
 - Default: `''`
-
-See [Save Cropped Image to DB](#how-to-use)
 
 #### croppedImageWidth
 - Type: `Number`
@@ -163,15 +163,15 @@ Show a spinner while running the PLSQL Code to save the cropped image.
 
 ### Save Cropped Image to DB
 For saving the cropped image to DB you can use a PL/SQL function like this (default):
-```language-sql
+```PLSQL
 declare
   l_collection_name varchar2(100);
-  l_chunk       varchar2(32000);
-  l_clob      clob;
-  l_blob      blob;
-  l_blob_size     number;
-  l_filename    varchar2(100);
-  l_mime_type     varchar2(100);
+  l_chunk           varchar2(32000);
+  l_clob            clob;
+  l_blob            blob;
+  l_blob_size       number;
+  l_filename        varchar2(100);
+  l_mime_type       varchar2(100);
 begin
   -- get defaults
   l_filename  := 'image_cropper_' || to_char(SYSDATE, 'YYYYMMDDHH24MISS') || '.png';
@@ -179,8 +179,8 @@ begin
   
   -- build CLOB from f01 30k Array
   dbms_lob.createtemporary(l_clob,
-               false,
-               dbms_lob.session);
+                           false,
+                           dbms_lob.session);
   
   for i in 1 .. apex_application.g_f01.count
   loop
@@ -188,8 +188,8 @@ begin
     
     if length(l_chunk) > 0 then
       dbms_lob.writeappend(l_clob,
-                 length(l_chunk),
-                 l_chunk);
+                           length(l_chunk),
+                           l_chunk);
     end if;
   end loop;
   
@@ -208,11 +208,11 @@ begin
   -- add collection member (only if BLOB not null)
   if l_blob_size is not null then
     apex_collection.add_member(p_collection_name => l_collection_name,
-                   p_c001      => l_filename, -- filename
-                   p_c002      => l_mime_type, -- mime_type
-                   p_n001      => l_blob_size, -- blob size
-                   p_d001      => sysdate, -- date created
-                   p_blob001     => l_blob); -- BLOB img content
+                               p_c001            => l_filename, -- filename
+                               p_c002            => l_mime_type, -- mime_type
+                               p_n001            => l_blob_size, -- blob size
+                               p_d001            => sysdate, -- date created
+                               p_blob001         => l_blob); -- BLOB img content
   end if;
 end;
 ```
@@ -244,7 +244,7 @@ Here's how you can reproduce the demo application
 2. Display image item: `P2_DISPLAY`
  - Based On: `BLOB Column returned by SQL statement`
  - SQL Statement:
-   ```language-sql
+    ```SQL
 select blob_content
   from apex_application_temp_files
  where name = :P2_UPLOAD
@@ -253,7 +253,7 @@ select blob_content
  - Display Condition :
     - Type: `Item is NOT NULL`
     - Item: P2_UPLOAD
-
+    
     > If you're displaying the image in a modal dialog and don't want the original image to be wider or taller that the dialog's width/height wrap the item in a div as follow:
     > - Pre Text: `<div style="max-width: 80vw; max-height: 80vh; margin: auto;">`
     > - Post Text: `</div>`
@@ -288,7 +288,7 @@ select blob_content
 #### Process
 1. Save Process
   - PL/SQL Code:
-  ```language-sql
+```PLSQL
 declare
   l_blob blob;
 begin
