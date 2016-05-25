@@ -1,0 +1,33 @@
+{
+  "name" : "Apex Image Cropper",
+  "version" : "1.0",
+  "description" : "This dynamic action plugin is used to crop an image using an HTML5 canvas and saves the resulting cropped image into the database.",
+  "keywords" : ["image", "crop"],
+  "homepage" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper",
+  "bugs" : {
+    "url" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper/issues",
+    "email" : "maxime.tremblay.consultant@gmail.com"
+  },
+  "license" : "MIT",
+  "author" : {
+    "name" : "Maxime Tremblay",
+    "email" : "maxime.tremblay.consultant@gmail.com",
+    "url" : "http://max-tremblay.blogspot.ca/"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper.git"
+  },
+  "oracle" : {
+    "versions" : ["11.2.0.1", "12.1.0.1"],
+    "apex" : {
+      "versions" : ["5.0.0"],
+      "plugin" : {
+        "internalName" : "CA.MAXIMET.APEXIMAGECROPPER",
+        "type" : "dynamic action",
+        "demo" : "http://max-playground.no-ip.org/ords/f?p=DEMO:1100",
+        "previewImage" : "https://raw.githubusercontent.com/maxime-tremblay/apex-plugin-imagecropper/master/preview.gif"
+      }
+    }
+  }
+}
