@@ -234,10 +234,12 @@ Here's how you can reproduce the demo application
 2. Display image item: `P2_DISPLAY`
  - Based On: `BLOB Column returned by SQL statement`
  - SQL Statement:
-   ```SQL
+   ```language-sql
    select blob_content
     from apex_application_temp_files
-   where name = :P2_UPLOAD```
+   where name = :P2_UPLOAD
+   ```
+   
  - Display Condition :
     - Type: `Item is NOT NULL`
     - Item: P2_UPLOAD
@@ -276,7 +278,7 @@ Here's how you can reproduce the demo application
 #### Process
 1. Save Process
   - PL/SQL Code:
-```SQL
+  ```language-sql
 declare
    l_blob blob;
 begin
@@ -287,7 +289,8 @@ begin
           dbms_lob.getlength(blob001) doc_size
      from apex_collections
     where collection_name = 'APEX_IMAGE_CROPPER';
-end;```
+end;
+```
   - Condition
     - Type: `Request = Value`
     - Value: `SAVE`
