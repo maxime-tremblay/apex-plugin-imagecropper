@@ -271,9 +271,14 @@ select blob_content
 
   - True Action
     - Action: `Apex Image Cropper`
+    - Settings
+    
       > Set settings according to desired behaviour
-
       > Make sure that the save button jQuery selector matches the static id (e.g.: #SAVE_BTN)
+
+    - Affected Elements
+      - Selection Type: Item(s)
+      - Item(s): `P2_DISPLAY`
 
 3. Cropper Save Done
   - Event: `Cropped Image Save to DB`
