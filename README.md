@@ -11,8 +11,8 @@ This plugin is based on the Cropper jQuery plugin ([https://github.com/fengyuanc
   - [Install](#install)
   - [Plugin Settings](#plugin-settings)
   - [How to use](#how-to-use)
-  - [Demo Application](#demo)
-  - [Preview](#preview)
+  - [Demo Application](#demo_app)
+  - [Preview](#preview_image)
 
 <a name="changelog"></a>
 ## Changelog
@@ -309,11 +309,11 @@ end;
     - Type: `Request = Value`
     - Value: `SAVE`
 
-<a name="demo"></a>
+<a name="demo_app"></a>
 ## Demo Application
 [http://max-playground.no-ip.org/ords/f?p=DEMO:1100](http://max-playground.no-ip.org/ords/f?p=DEMO:1100)
 
-<a name="preview"></a>
+<a name="preview_image"></a>
 ## Preview
 ## ![](https://github.com/maxime-tremblay/apex-plugin-imagecropper/blob/master/preview.gif)
 
