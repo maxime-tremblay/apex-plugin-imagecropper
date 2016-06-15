@@ -233,6 +233,7 @@ Here's how you can reproduce the demo application
 
 #### Page Button
 1. Save
+  - Action: `Defined by Dynamic Action`
   - Satic ID: `SAVE_BTN`
 
 #### Page Items
