@@ -1,6 +1,6 @@
 {
   "name" : "Apex Image Cropper",
-  "version" : "1.0",
+  "version" : "1.1",
   "description" : "This dynamic action plugin is used to crop an image using an HTML5 canvas and saves the resulting cropped image into the database.",
   "keywords" : ["image", "crop"],
   "homepage" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper",
