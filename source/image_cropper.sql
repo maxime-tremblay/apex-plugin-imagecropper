@@ -81,7 +81,7 @@ function ajax_image_cropper(p_dynamic_action in apex_plugin.t_dynamic_action,
                             p_plugin         in apex_plugin.t_plugin)
 return apex_plugin.t_dynamic_action_ajax_result is
     -- plugin attributes
-    l_plsql_code  p_plugin.attribute_11%type  := p_dynamic_action.attribute_11;
+    l_plsql_code  p_dynamic_action.attribute_11%type  := p_dynamic_action.attribute_11;
 begin
     -- execute PL/SQL
     apex_plugin_util.execute_plsql_code(p_plsql_code => l_plsql_code);
