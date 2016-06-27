@@ -17,6 +17,9 @@ This plugin is based on the Cropper jQuery plugin ([https://github.com/fengyuanc
 <a name="changelog"></a>
 ## Changelog
 ### 1.0 - Initial Release
+### 1.1 - Initial Release
+  - Fixed the max width and height of the cropped image. Cropped image width and height is now always adjusted according to the
+defined parameter(s).
 
 [⬆ back to top](#top)
 
@@ -134,23 +137,17 @@ See [Save Cropped Image to DB](#how-to-use)
 - Type: `String` (**jQuery selector**)
 - Default: `''`
 
-#### croppedImageWidth
+#### Cropped Image Maximum Width
 - Type: `Number`
 - Default: `null`
 
-The width of the cropped image. Only used when saving the image.
+The maximum width of the cropped image. Only used when saving the image.
 
-> **Note:** Both croppedImageWidth and croppedImageHeight need to be specified and they must match with the defined aspectRatio.
-
-
-#### croppedImageHeight
+#### Cropped Image Maximum Height
 - Type: `Number`
 - Default: `null`
 
-The height of the cropped image. Only used when saving the image.
-
-> **Note:** Both croppedImageWidth and croppedImageHeight need to be specified and they must match with the defined aspectRatio.
-
+The maximum height of the cropped image. Only used when saving the image.
 
 #### showSpinner
 - Type: `Yes/No`
