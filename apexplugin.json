@@ -27,7 +27,7 @@
       "plugin" : {
         "internalName" : "CA.MAXIMET.APEXIMAGECROPPER",
         "type" : "dynamic action",
-        "demo" : "http://max-playground.no-ip.org/ords/f?p=DEMO:1100",
+        "demo" : "http://max-playground.ddns.net/ords/f?p=DEMO:1100",
         "previewImage" : "https://raw.githubusercontent.com/maxime-tremblay/apex-plugin-imagecropper/master/preview.gif"
       }
     }
