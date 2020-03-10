@@ -1,5 +1,5 @@
 <a name="top"></a>
-# Oracle APEX Dynamic Action Plugin - Apex Image Cropper
+# Oracle APEX Dynamic Action Plugin - APEX Image Cropper
 This dynamic action plugin is used to crop an image using an HTML5 canvas and saves the resulting cropped image into the database.
 
 This plugin is based on the Cropper jQuery plugin ([https://github.com/fengyuanchen/cropper](https://github.com/fengyuanchen/cropper)).
@@ -268,7 +268,7 @@ select blob_content
   - Event: `Page Load`
 
   - True Action
-    - Action: `Apex Image Cropper`
+    - Action: `APEX Image Cropper`
     - Settings
     
       > Set settings according to desired behaviour
