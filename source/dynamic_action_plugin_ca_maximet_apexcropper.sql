@@ -31,12 +31,12 @@ wwv_flow_api.create_plugin(
  p_id=>wwv_flow_api.id(56064276942500481)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'CA.MAXIMET.APEXCROPPER'
-,p_display_name=>'Apex Image Cropper'
+,p_display_name=>'APEX Image Cropper'
 ,p_category=>'INIT'
 ,p_supported_ui_types=>'DESKTOP'
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '/*-------------------------------------',
-' * Apex Image Cropper functions',
+' * APEX Image Cropper functions',
 ' * Version: 1.1 (2016-06-27)',
 ' * Author:  Maxime Tremblay',
 ' *-------------------------------------',
