@@ -1,5 +1,5 @@
 /*-------------------------------------
- * Apex Image Cropper functions
+ * APEX Image Cropper functions
  * Version: 1.1 (2016-06-27)
  * Author:  Maxime Tremblay
  *-------------------------------------
