@@ -309,7 +309,7 @@ end;
 
 <a name="demo_app"></a>
 ## Demo Application
-[http://max-playground.ddns.net/ords/f?p=DEMO:1100](http://max-playground.ddns.net/ords/f?p=DEMO:1100)
+[https://askmax.solutions/ords/f?p=201:1100](https://askmax.solutions/ords/f?p=201:1100)
 
 <a name="preview_image"></a>
 ## Preview
