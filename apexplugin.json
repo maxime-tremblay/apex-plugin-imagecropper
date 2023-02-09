@@ -6,15 +6,15 @@
   "homepage" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper",
   "bugs" : {
     "url" : "https://github.com/maxime-tremblay/apex-plugin-imagecropper/issues",
-    "email" : "maxime.tremblay.consultant@gmail.com"
+    "email" : "askmax@askmax.solutions"
   },
   "license" : "MIT",
   "author" : {
     "name" : "Maxime Tremblay",
-    "email" : "maxime.tremblay.consultant@gmail.com",
-    "twitter" : "mtremblaydev",
+    "email" : "askmax@askmax.solutions",
+    "twitter" : "askmaxsolutions",
     "donationUrl" : "https://paypal.me/mtremblaydev/3",
-    "url" : "http://max-tremblay.blogspot.ca/"
+    "url" : "https://askmax.blog/"
   },
   "repository" : {
     "type" : "git",
@@ -27,7 +27,7 @@
       "plugin" : {
         "internalName" : "CA.MAXIMET.APEXIMAGECROPPER",
         "type" : "dynamic action",
-        "demo" : "http://max-playground.ddns.net/ords/f?p=DEMO:1100",
+        "demo" : "https://askmax.solutions/ords/f?p=201:1100",
         "previewImage" : "https://raw.githubusercontent.com/maxime-tremblay/apex-plugin-imagecropper/master/preview.gif"
       }
     }
